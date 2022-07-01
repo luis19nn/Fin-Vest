@@ -11,6 +11,7 @@ public final class App {
      */
 
     public static void main(String[] args) {
+        menu();
     }
 
     /**
@@ -18,6 +19,49 @@ public final class App {
      */
 
     public static void menu() {
+        Scanner sc = new Scanner(System.in);
+        double valorCapital = 0.0, taxaJuros = 0.0;
+        int prazoInvestimento = 0, opcao = 0;
+        boolean continuar = true;
+
+        while (continuar) {
+            System.out.println("\n\n#####################################");
+            System.out.println("############ BEM-VINDO(A) ###########");
+            System.out.println("############   FIN-VEST   ###########");
+            System.out.println("#####################################");
+
+            System.out.println("\nSelecione uma opção abaixo: ");
+            System.out.println("1 - Definir Valores");
+            System.out.println("2 - Verificar o Valor Final do Capital Investido");
+            System.out.println("3 - Verificar o Resultado Obtido Mês a Mês");
+            System.out.println("4 - Verificar Quanto Representa a Taxa de Juros no Valor Final");
+            System.out.println("5 - Sair do Sistema");
+
+            opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                default:
+
+                    break;
+            }
+        }
+
+        sc.close();
     }
 
     /**
