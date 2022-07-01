@@ -41,21 +41,64 @@ public final class App {
 
             switch (opcao) {
                 case 1:
+                    while (true) {
+                        try {
+                            System.out.printf("\nInforme o valor do capital a ser investido, em reais: ");
+                            valorCapital = sc.nextDouble();
+
+                            System.out.printf("\nInforme o prazo do investimento, em meses: ");
+                            prazoInvestimento = sc.nextInt();
+
+                            System.out.printf("\nInforme a taxa de juros da aplicação, em decimal: ");
+                            taxaJuros = sc.nextDouble();
+
+                            if (valorCapital > 0.0 && prazoInvestimento > 0.0 && taxaJuros > 0.0) {
+                                break;
+                            } else {
+                                throw new InputMismatchException();
+                            }
+                        } catch (InputMismatchException e) {
+                            System.out.printf("\nInforme um valor válido!\n\n");
+                        } finally {
+                            Helper.clearBuffer(sc);
+                        }
+                    }
+
+                    System.out.println("\nOs valores foram definidos com sucesso!");
 
                     break;
                 case 2:
+                    if (valorCapital > 0.0 && prazoInvestimento > 0.0 && taxaJuros > 0.0) {
+                        valorFinalCapitalInvestidoView(valorCapital, prazoInvestimento, taxaJuros);
+                    } else {
+                        System.out.println("\nEspere! Defina os valores primeiro, antes de utilizar o sistema!" +
+                                "\nNão esqueça que só é aceito número positivos maiores que zero!");
+                    }
 
                     break;
                 case 3:
+                    if (valorCapital > 0.0 && prazoInvestimento > 0.0 && taxaJuros > 0.0) {
+                        resultadoMesAMesView(valorCapital, prazoInvestimento, taxaJuros);
+                    } else {
+                        System.out.println("\nEspere! Defina os valores primeiro, antes de utilizar o sistema!");
+                    }
 
                     break;
                 case 4:
+                    if (valorCapital > 0.0 && prazoInvestimento > 0.0 && taxaJuros > 0.0) {
+                        taxaJurosValorFinalView(valorCapital, prazoInvestimento, taxaJuros);
+                    } else {
+                        System.out.println("\nEspere! Defina os valores primeiro, antes de utilizar o sistema!");
+                    }
 
                     break;
                 case 5:
+                    System.out.println("\nVolte sempre!\n");
+                    continuar = false;
 
                     break;
                 default:
+                    System.out.println("\nOpção inválida!\n");
 
                     break;
             }
