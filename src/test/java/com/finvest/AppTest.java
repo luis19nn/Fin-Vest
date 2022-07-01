@@ -53,14 +53,38 @@ class AppTest {
 
     @Test
     void testValorFinalCapitalInvestido2() {
+        double valorCapital = -1000.0, taxaJuros = -0.1;
+        int prazoInvestimento = 'a';
+
+        try {
+            App.valorFinalCapitalInvestido(valorCapital, prazoInvestimento, taxaJuros);
+        } catch (InputMismatchException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
     void testResultadoMesAMes2() {
+        double valorCapital = -1000.0, taxaJuros = -0.1;
+        int prazoInvestimento = 'a';
+
+        try {
+            App.resultadoMesAMes(valorCapital, prazoInvestimento, taxaJuros);
+        } catch (InputMismatchException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
     void testTaxaJurosValorFinal2() {
+        double valorCapital = -1000.0, taxaJuros = -0.1;
+        int prazoInvestimento = 'a';
+
+        try {
+            App.taxaJurosValorFinal(valorCapital, prazoInvestimento, taxaJuros);
+        } catch (InputMismatchException e) {
+            e.printStackTrace();
+        }
     }
 
 }
