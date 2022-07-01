@@ -78,12 +78,35 @@ public final class App {
      */
 
     public static void valorFinalCapitalInvestidoView(double valorCapital, int prazoInvestimento, double taxaJuros) {
+        double valorFinal = valorFinalCapitalInvestido(valorCapital, prazoInvestimento, taxaJuros);
+
+        System.out.println("\n#####################################");
+        System.out.printf("O valor final do capital investido após o período informado é de: %.2f", valorFinal);
+        System.out.println("\n#####################################");
     }
 
     public static void resultadoMesAMesView(double valorCapital, int prazoInvestimento, double taxaJuros) {
+        double[][] resMes = resultadoMesAMes(valorCapital, prazoInvestimento, taxaJuros);
+
+        System.out.println("\n#####################################");
+        System.out.println("O resultado mês a mês do seu investimento é de: \n");
+
+        System.out.printf("|Capital            |Juros no Mês       |\n");
+        System.out.printf("|---------------------------------------|\n");
+
+        for (int i = 0; i < prazoInvestimento; i++) {
+            System.out.printf("|R$%.2f          |R$%.2f           |\n", resMes[i][0], resMes[i][1]);
+        }
+
+        System.out.println("\n#####################################");
     }
 
     public static void taxaJurosValorFinalView(double valorCapital, int prazoInvestimento, double taxaJuros) {
+        double taxaFinal = taxaJurosValorFinal(valorCapital, prazoInvestimento, taxaJuros);
+
+        System.out.println("\n#####################################");
+        System.out.printf("A taxa de juros no valor final é de: %.2f", taxaFinal);
+        System.out.println("\n#####################################");
     }
 
 }
